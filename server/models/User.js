@@ -1,4 +1,4 @@
-const { Schema, model } = mongoose;
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // import schema from Exercise.js
