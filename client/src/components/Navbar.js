@@ -4,7 +4,7 @@ function NavBar({ currentPage, handlePageChange }) {
     return (
   
       <nav class="navbar navbar-expand-lg">
-        <a 
+        {/* <a 
         className="navbar-brand" 
         href="#home">
         </a>
@@ -43,7 +43,7 @@ function NavBar({ currentPage, handlePageChange }) {
               >Login</a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </nav>
   
     );
