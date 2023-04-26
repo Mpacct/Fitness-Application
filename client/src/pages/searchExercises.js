@@ -4,6 +4,7 @@ import { saveExerciseIds, getSavedExercises } from '../utils/localStorage';
 import { SAVE_EXERCISE } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { searchExerciseAPI } from '../utils/API';
+import Card from '../components/Card';
 
 
 const SearchExercises = () => {
@@ -25,15 +26,13 @@ const SearchExercises = () => {
         }
 
         try {
-            const response = await searchExerciseAPI(searchInput);
-
-            if (!response.ok) {
-                throw new Error('something went wrong!');
-            }
-
-            const { items } = await response.json();
-
-            const exerciseData = items.map((exercise) => ({
+            console.log(searchInput)
+            const response = await searchExerciseAPI(searchInput)
+                .then(function(response){
+        response.json().then(function(data){
+            console.log(data)
+            
+            const exerciseData = data.map((exercise) => ({
                 exerciseId: exercise.id,
                 name: exercise.name || ['No exercise to display'],
                 bodyPart: exercise.bodyPart,
@@ -44,6 +43,29 @@ const SearchExercises = () => {
 
             setSearchedExercises(exerciseData);
             setSearchInput('');
+            ;
+        })
+    })
+
+            // if (!response.ok) {
+            //     throw new Error('something went wrong!');
+            // }
+            
+            // const { items } = await response.json();
+            
+
+            // const exerciseData = items.map((exercise) => ({
+            //     exerciseId: exercise.id,
+            //     name: exercise.name || ['No exercise to display'],
+            //     bodyPart: exercise.bodyPart,
+            //     muscleTarget: exercise.muscleTarget,
+            //     equipmentUsed: exercise.equipmentUsed,
+            //     image: exercise?.image || '',
+            // }));
+
+            // setSearchedExercises(exerciseData);
+            // setSearchInput('');
+            
         } catch (err) {
             console.error(err);
         }
@@ -75,18 +97,31 @@ const SearchExercises = () => {
     };
 
     return (
-        <div className="text-center">
-      <img
-        alt={props.title}
-        className="img-fluid"
-        src={props.src}
-        style={{ margin: '0 auto' }}
-      />
-      <h3>Director(s): {props.director}</h3>
-      <h3>Genre: {props.genre}</h3>
-      <h3>Released: {props.released}</h3>
-    </div>
-        
+        <>
+            <div>
+                <form className="dropdown show" onSubmit={handleFormSubmit}>
+                    <select onChange={(e) => setSearchInput(e.target.value)} className="form-select" aria-label="Default select example">
+                        <option value>Open this select menu</option>
+                        <option value="abs">One</option>
+                        <option value="biceps">Two</option>
+                        <option value="calves">Three</option>
+                    </select>
+                    <button type='submit' variant='success'>Search</button>
+                </form>
+            </div>
+            <div>
+                {searchedExercises.map((exercise) => {
+                    return (
+                        <Card key={exercise.exerciseId}
+                            image={exercise.image}
+                            name={exercise.name}
+                            muscleTarget={exercise.muscleTarget}
+                            equipmentUsed={exercise.equipmentUsed}
+                        />
+                    )
+                })}
+            </div>
+        </>
     );
 };
 
