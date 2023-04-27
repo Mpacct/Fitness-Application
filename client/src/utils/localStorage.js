@@ -15,13 +15,14 @@ export const saveExerciseIds = (exerciseIdArr) => {
 };
   
 export const removeExerciseId = (exerciseId) => {
-    const saveExerciseIds = localStorage.getItem('saved_exercises')
+    const savedExerciseIds = localStorage.getItem('saved_exercises')
       ? JSON.parse(localStorage.getItem('saved_exercises'))
       : null;
   
-    if (!saveExerciseIds) {
+    if (!savedExerciseIds) {
       return false;
     }
+   
   
     const updatedSavedExercisesIds = savedExerciseIds?.filter((savedExerciseId) => savedExerciseId !== exerciseId);
     localStorage.setItem('saved_exercises', JSON.stringify(updatedSavedExercisesIds));
