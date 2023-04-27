@@ -27,12 +27,10 @@ const SearchExercises = () => {
 
         try {
             console.log(searchInput)
-            const response = await searchExerciseAPI(searchInput)
-                .then(function(response){
-        response.json().then(function(data){
-            console.log(data)
-            
-            const exerciseData = data.map((exercise) => ({
+            const response = await searchExerciseAPI(searchInput);
+            console.log(response);
+
+            const exerciseData = response.map((exercise) => ({
                 exerciseId: exercise.id,
                 name: exercise.name || ['No exercise to display'],
                 bodyPart: exercise.bodyPart,
@@ -41,31 +39,9 @@ const SearchExercises = () => {
                 image: exercise?.image || '',
             }));
 
-            setSearchedExercises(exerciseData);
-            setSearchInput('');
-            ;
-        })
-    })
+                    setSearchedExercises(exerciseData);
+                    setSearchInput('');
 
-            // if (!response.ok) {
-            //     throw new Error('something went wrong!');
-            // }
-            
-            // const { items } = await response.json();
-            
-
-            // const exerciseData = items.map((exercise) => ({
-            //     exerciseId: exercise.id,
-            //     name: exercise.name || ['No exercise to display'],
-            //     bodyPart: exercise.bodyPart,
-            //     muscleTarget: exercise.muscleTarget,
-            //     equipmentUsed: exercise.equipmentUsed,
-            //     image: exercise?.image || '',
-            // }));
-
-            // setSearchedExercises(exerciseData);
-            // setSearchInput('');
-            
         } catch (err) {
             console.error(err);
         }
