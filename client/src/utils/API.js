@@ -4,7 +4,7 @@ const options = {
     method: 'GET',
     headers: {
         'content-type': 'application/octet-stream',
-        'X-RapidAPI-Key': 
+        'X-RapidAPI-Key': '',
         'X-RapidAPI-Host': 'exercises2.p.rapidapi.com'
     }
 };
