@@ -6,7 +6,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SearchExercises from './pages/SearchExercises';
+import ExerciseSearch from './pages/ExerciseSearch';
 import Home from './pages/Home';
 import NoMatch from './pages/NoMatch';
 // import Exercises from './pages/Exercises';
@@ -48,7 +48,7 @@ function App() {
             />
             <Route
               path="/exercises"
-              element={<SearchExercises />}
+              element={<ExerciseSearch />}
             />
             <Route
               path="/login"
