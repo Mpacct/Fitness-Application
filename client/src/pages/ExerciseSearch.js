@@ -78,11 +78,27 @@ const SearchExercises = () => {
                 <form className="dropdown show" onSubmit={handleFormSubmit}>
                     <select onChange={(e) => setSearchInput(e.target.value)} className="form-select" aria-label="Default select example">
                         <option value>Open this select menu</option>
-                        <option value="abs">One</option>
-                        <option value="biceps">Two</option>
-                        <option value="calves">Three</option>
+                        <option value="abductors">Abductors</option>
+                        <option value="abs">Abs</option>
+                        <option value="abbuctors">Abbuctors</option>
+                        <option value="biceps">Biceps</option>
+                        <option value="calves">Calves</option>
+                        <option value="cardiovascular-system">Cardiovascular-System</option>
+                        <option value="delts">Delts</option>
+                        <option value="forearms">Forearms</option>
+                        <option value="glutes">Glutes</option>
+                        <option value="hamstrings">Hamstrings</option>
+                        <option value="lats">Lats</option>
+                        <option value="levator-scapulae">Levator-Scapulae</option>
+                        <option value="pectorals">Pectorals</option>
+                        <option value="quads">Quads</option>
+                        <option value="serratus-anterior">Serratus-Anterior</option>
+                        <option value="spine">Spine</option>
+                        <option value="traps">Traps</option>
+                        <option value="triceps">Triceps</option>
+                        <option value="upper-back">Upper-Back</option>
                     </select>
-                    <button type='submit' variant='success'>Search</button>
+                    <button type='submit' variant='success'>Search Workouts</button>
                 </form>
             </div>
             <div>
