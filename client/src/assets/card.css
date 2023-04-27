@@ -1,0 +1,17 @@
+.exercise-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.exercise-muscle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.exercise-equipment {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
