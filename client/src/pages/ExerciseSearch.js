@@ -5,6 +5,7 @@ import { SAVE_EXERCISE } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { searchExerciseAPI } from '../utils/API';
 import Card from '../components/Card';
+import '../assets/exerciseSearch.css';
 
 
 const SearchExercises = () => {
@@ -39,8 +40,8 @@ const SearchExercises = () => {
                 image: exercise?.image || '',
             }));
 
-                    setSearchedExercises(exerciseData);
-                    setSearchInput('');
+            setSearchedExercises(exerciseData);
+            setSearchInput('');
 
         } catch (err) {
             console.error(err);
@@ -75,44 +76,54 @@ const SearchExercises = () => {
     return (
         <>
             <div>
-                <form className="dropdown show" onSubmit={handleFormSubmit}>
-                    <select onChange={(e) => setSearchInput(e.target.value)} className="form-select" aria-label="Default select example">
-                        <option value>Open this select menu</option>
-                        <option value="abductors">Abductors</option>
-                        <option value="abs">Abs</option>
-                        <option value="abbuctors">Abbuctors</option>
-                        <option value="biceps">Biceps</option>
-                        <option value="calves">Calves</option>
-                        <option value="cardiovascular-system">Cardiovascular-System</option>
-                        <option value="delts">Delts</option>
-                        <option value="forearms">Forearms</option>
-                        <option value="glutes">Glutes</option>
-                        <option value="hamstrings">Hamstrings</option>
-                        <option value="lats">Lats</option>
-                        <option value="levator-scapulae">Levator-Scapulae</option>
-                        <option value="pectorals">Pectorals</option>
-                        <option value="quads">Quads</option>
-                        <option value="serratus-anterior">Serratus-Anterior</option>
-                        <option value="spine">Spine</option>
-                        <option value="traps">Traps</option>
-                        <option value="triceps">Triceps</option>
-                        <option value="upper-back">Upper-Back</option>
-                    </select>
-                    <button type='submit' variant='success'>Search Workouts</button>
-                </form>
-            </div>
-            <div>
-                {searchedExercises.map((exercise) => {
-                    return (
-                        <Card key={exercise.exerciseId}
-                            image={exercise.image}
-                            name={exercise.name}
-                            muscleTarget={exercise.muscleTarget}
-                            equipmentUsed={exercise.equipmentUsed}
-                        />
-                    )
-                })}
-            </div>
+                <section className="page-section">
+                    <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
+                        <div className="col-lg-6">
+                            <form className="form-group" onSubmit={handleFormSubmit}>
+                                <select onChange={(e) => setSearchInput(e.target.value)} className="btn dropdown-toggle" aria-label="Default select example">
+                                    <option value>Select a muscle to workout</option>
+                                    <option value="abductors">Abductors</option>
+                                    <option value="abs">Abs</option>
+                                    <option value="abbuctors">Abbuctors</option>
+                                    <option value="biceps">Biceps</option>
+                                    <option value="calves">Calves</option>
+                                    <option value="cardiovascular-system">Cardiovascular-System</option>
+                                    <option value="delts">Delts</option>
+                                    <option value="forearms">Forearms</option>
+                                    <option value="glutes">Glutes</option>
+                                    <option value="hamstrings">Hamstrings</option>
+                                    <option value="lats">Lats</option>
+                                    <option value="levator-scapulae">Levator-Scapulae</option>
+                                    <option value="pectorals">Pectorals</option>
+                                    <option value="quads">Quads</option>
+                                    <option value="serratus-anterior">Serratus-Anterior</option>
+                                    <option value="spine">Spine</option>
+                                    <option value="traps">Traps</option>
+                                    <option value="triceps">Triceps</option>
+                                    <option value="upper-back">Upper-Back</option>
+                                </select>
+                                <div className="d-grid">
+                                <button className="button btn-secondary" type='submit' variant='success'>Search Workouts</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </section>
+                {
+                    searchedExercises.map((exercise) => {
+                        return (
+                            <Card 
+                                key={exercise.exerciseId}
+                                image={exercise.image}
+                                name={exercise.name}
+                                muscleTarget={exercise.muscleTarget}
+                                equipmentUsed={exercise.equipmentUsed}
+                            />
+                        )
+                    })
+                }
+            </div >
         </>
     );
 };
