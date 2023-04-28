@@ -30,18 +30,25 @@ function Signup(props) {
     };
 
     return (
-        <div className="container my-1">
-            <Link to="/login">← Go to Login</Link>
+        <div>
+        <section className="mask d-flex align-items-center" >
+            <div className="container h-100">
+                <div className="row d-flex justify-content-center align-items-center h-100">
+                <div className="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div className="border-radius: 15px;">
+                        <div className="card-body p-5">
 
-            <h2>Signup</h2>
+
+            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
             <form onSubmit={handleFormSubmit}>
-                <div className="flex-row space-between my-2">
+                <div className="form-outline mb-4">
                     <label htmlFor="username">Username:</label>
                     <input
                         placeholder="Username"
                         name="username"
                         type="username"
                         id="username"
+                        className="form-control form-control-lg"
                         onChange={handleChange}
                     />
                 </div>
@@ -52,6 +59,7 @@ function Signup(props) {
                         name="email"
                         type="email"
                         id="email"
+                        className="form-control form-control-lg"
                         onChange={handleChange}
                     />
                 </div>
@@ -62,13 +70,21 @@ function Signup(props) {
                         name="password"
                         type="password"
                         id="pwd"
+                        className="form-control form-control-lg"
                         onChange={handleChange}
                     />
                 </div>
                 <div className="flex-row flex-end">
                     <button type="submit">Submit</button>
                 </div>
+                <Link to="/login">← Go to Login</Link>
             </form>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
         </div>
     );
 }
