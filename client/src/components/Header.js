@@ -7,7 +7,7 @@ export default function Header() {
 
         <div>
             <div className="header content-section-heading text-center">
-            <img src={banner} alt="Responsive image" width="1500" className="img-fluid" />
+            <img src={banner} alt="Responsive image" width="2500" className="img-fluid" />
             </div>
         </div>
 

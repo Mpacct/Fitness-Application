@@ -4,9 +4,8 @@ import '../assets/card.css';
 function Card(props) {
     return (
         <div>
-            <section className="py-5">
+            <section className="pt-md-5">
                 <div className="container">
-                <div className="col">
                     <div className="row-cols-md-3 justify-content-center">
                         <div className="col mb-5">
                             <div className="card h-100">
@@ -16,7 +15,6 @@ function Card(props) {
                                         <h2 className="exercise-title">{props.name}</h2>
                                         <h5 className="exercise-muscle">{props.muscleTarget}</h5>
                                         <p className="exercise-equipment">{props.equipmentUsed}</p>
-
                                     </div>
                                 </div>
                                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -28,7 +26,6 @@ function Card(props) {
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </section>
