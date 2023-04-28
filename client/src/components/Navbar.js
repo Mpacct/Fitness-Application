@@ -13,7 +13,7 @@ function Navbar() {
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="Logo" width="200" className="d-inline-block align-text-center me-2" />
         </Link>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="nav-item" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link to="/" className="nav-link" aria-current="page">Home</Link>
@@ -22,10 +22,10 @@ function Navbar() {
               <Link to="/exercises" className="nav-link" aria-current="page">Exercises</Link>
             </li>
             <li className="nav-item">
-              <Link to="/signup" className="btn btn-secondary" aria-current="page">Signup</Link>
+              <Link to="/signup" className="nav-link" aria-current="page">Signup</Link>
             </li>
             <li className="nav-item">
-              <Link to="/login" className="btn btn-secondary" aria-current="page">Login</Link>
+              <Link to="/login" className="button btn-outline-dark mt-auto" aria-current="page">Login</Link>
             </li>
           </ul>
         </div>
