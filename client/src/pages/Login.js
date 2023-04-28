@@ -70,7 +70,7 @@ function Login(props) {
                       <button className="button btn-outline-dark mt-auto" type="submit">Login</button>
                     </div>
                     <div className="d-flex justify-content-center">
-                      <p className="text-center text-muted mt-5 mb-0">Don't have an account? <Link to="/login">Signup here</Link></p>
+                      <p className="text-center text-muted mt-5 mb-0">Don't have an account? <Link to="/signup">Signup here</Link></p>
                     </div>
                   </form>
                 </div>
