@@ -111,42 +111,44 @@ const SearchExercises = () => {
 
                     </div>
                 </section>
-                {
-                    searchedExercises.map((exercise) => {
+                <div className="container">
+                    <div className="row">
+                    {searchedExercises.map((exercise) => {
                         return (
-                            <div key={exercise.exerciseId}>
+                            <div className="col-4" key={exercise.exerciseId}>
                                 <section className="pt-md-5">
-                                    <div className="container">
-                                        <div className="row-cols-md-3 justify-content-center">
-                                            <div className="col mb-5">
-                                                <div className="card h-100">
-                                                    <img className="card-img-top" src={exercise.image} alt="..." />
-                                                    <div className="card-body p-4">
-                                                        <div className="text-center">
-                                                            <h2 className="exercise-title">{exercise.name}</h2>
-                                                            <h5 className="exercise-muscle">{exercise.muscleTarget}</h5>
-                                                            <p className="exercise-equipment">{exercise.equipmentUsed}</p>
-                                                        </div>
+
+                                    {/* <div className="row-cols-md-3 justify-content-center">
+                                        <div className="col mb-5"> */}
+                                            <div className="card h-100">
+                                                <img className="card-img-top" src={exercise.image} alt="..." />
+                                                <div className="card-body p-4">
+                                                    <div className="text-center">
+                                                        <h2 className="exercise-title">{exercise.name}</h2>
+                                                        <h5 className="exercise-muscle">{exercise.muscleTarget}</h5>
+                                                        <p className="exercise-equipment">{exercise.equipmentUsed}</p>
                                                     </div>
-                                                    <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div className="text-center">
-                                                            <button
-                                                                disabled={savedExerciseIds?.some((savedExerciseId) => savedExerciseId === exercise.exerciseId)}
-                                                                onClick={() => handleSaveExercise(exercise.exerciseId)}
-                                                                className="button btn-outline-dark mt-auto">
-                                                                {savedExerciseIds?.some((savedExerciseId) => savedExerciseId === exercise.exerciseId)
-                                                                    ? 'This exercise has already been saved!'
-                                                                    : 'Save exercise'}
-                                                            </button>
-                                                        </div>
+                                                </div>
+                                                <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                    <div className="text-center">
+                                                        <button
+                                                            disabled={savedExerciseIds?.some((savedExerciseId) => savedExerciseId === exercise.exerciseId)}
+                                                            onClick={() => handleSaveExercise(exercise.exerciseId)}
+                                                            className="button btn-outline-dark mt-auto">
+                                                            {savedExerciseIds?.some((savedExerciseId) => savedExerciseId === exercise.exerciseId)
+                                                                ? 'This exercise has already been saved!'
+                                                                : 'Save exercise'}
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        {/* </div>
+                                    </div> */}
+
                                 </section>
                             </div>
-                            // <Card 
+
+                            // <Card
                             //     key={exercise.exerciseId}
                             //     image={exercise.image}
                             //     name={exercise.name}
@@ -155,7 +157,9 @@ const SearchExercises = () => {
                             // />
                         )
                     })
-                }
+                    }
+                </div>
+                </div>
             </div >
         </>
     );
