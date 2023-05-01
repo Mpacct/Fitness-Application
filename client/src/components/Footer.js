@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
     return (
-        <div>
+        <div className="mt-5">
         <footer className="text-center text-lg-stop">
             <div className="justify-content-center justify-content-lg-between p-4 border-top">
                 <div className="justify-content-center">

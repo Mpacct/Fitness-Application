@@ -36,11 +36,13 @@ const Exercises = () => {
 
 
     return (
+        <div>                    
+         <h2 className="text-center mt-5">Saved Exercises</h2>
         <div className="container">
             <div className="row">
                 {userData.savedExercises.map((exercise) => {
                     return (
-                        <div className="col-4" key={exercise.exerciseId}>
+                        <div className="col-lg-4 col-md-6 col-sm-12" key={exercise.exerciseId}>
                             <section className="pt-md-5">
                                 <div className="card h-100">
                                     <img className="card-img-top" src={exercise.image} alt="..." />
@@ -54,8 +56,8 @@ const Exercises = () => {
                                     <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div className="text-center">
                                             <button
-                                                className="button btn-outline-dark mt-auto" onClick={()=> handleDeleteExercise(exercise.exerciseId)}>
-                                                Delete 
+                                                className="button btn-outline-dark mt-auto" onClick={() => handleDeleteExercise(exercise.exerciseId)}>
+                                                Delete
                                             </button>
                                         </div>
                                     </div>
@@ -69,6 +71,7 @@ const Exercises = () => {
                 }
             </div>
         </div>
+     </div>
     );
 }
 export default Exercises;

@@ -9,7 +9,6 @@ const options = {
         'X-RapidAPI-Host': 'exercises2.p.rapidapi.com'
     }
 };
-console.log(options)
   export const searchExerciseAPI = async (query) => {
     const url = `https://exercises2.p.rapidapi.com/?muscleTarget=${query}&count=15`;
     const data = await fetch(url, options);

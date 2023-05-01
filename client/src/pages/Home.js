@@ -19,9 +19,8 @@ function Home() {
 
             return (
                 <div>
-                    <h2 className="text-center m-5">Dashboard</h2>
+                    <h2 className="text-center m-5">Personal Dashboard</h2>
                     <Dashboard />
-                    <h2 className="text-center mt-5">Saved Exercises</h2>
                     <Exercises />
                 </div>
             )
