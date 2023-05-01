@@ -115,7 +115,7 @@ const SearchExercises = () => {
                     <div className="row">
                     {searchedExercises.map((exercise) => {
                         return (
-                            <div className="col-4" key={exercise.exerciseId}>
+                            <div className="col-lg-4 col-md-6 col-sm-12" key={exercise.exerciseId}>
                                 <section className="pt-md-5">
 
                                     {/* <div className="row-cols-md-3 justify-content-center">

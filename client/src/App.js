@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import ExerciseSearch from './pages/ExerciseSearch';
 import Home from './pages/Home';
 import NoMatch from './pages/NoMatch';
-// import Exercises from './pages/Exercises';
+import SavedExercises from './pages/Exercises';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from '../src/components/Header';
@@ -60,10 +60,14 @@ function App() {
               path="/signup"
               element={<Signup />}
             />
-            <Route 
-                path="*" 
-                element={<NoMatch />} 
-              />
+            <Route
+              path="*"
+              element={<NoMatch />}
+            />
+            <Route
+              path="/savedExercises"
+              element={<SavedExercises />}
+            />
           </Routes>
           <Footer />
         </div>
