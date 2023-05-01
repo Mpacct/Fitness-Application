@@ -8,7 +8,10 @@ const resolvers = {
       if (context.user) {
         return userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          .populate('Exercise');
+          .populate('savedExercises').populate({
+            path: 'savedExercises',
+            populate: 'user'
+          });
       }
       throw new AuthenticationError('You need to be logged in!');
     },

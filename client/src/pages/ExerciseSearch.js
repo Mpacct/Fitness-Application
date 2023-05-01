@@ -136,7 +136,7 @@ const SearchExercises = () => {
                                                             onClick={() => handleSaveExercise(exercise.exerciseId)}
                                                             className="button btn-outline-dark mt-auto">
                                                             {savedExerciseIds?.some((savedExerciseId) => savedExerciseId === exercise.exerciseId)
-                                                                ? 'This exercise has already been saved!'
+                                                                ? 'This exercise is now saved!'
                                                                 : 'Save exercise'}
                                                         </button>
                                                     </div>
