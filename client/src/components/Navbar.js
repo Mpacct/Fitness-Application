@@ -44,10 +44,10 @@ function Navbar() {
         <div className="nav-item" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link to="/" className="nav-link" aria-current="page">Home</Link>
+              <Link to="/" className="nav-link" aria-current="page">Dashboard</Link>
             </li>
             <li className="nav-item">
-              <Link to="/exercises" className="nav-link" aria-current="page">Exercises</Link>
+              <Link to="/exercises" className="nav-link" aria-current="page">Find Exercises</Link>
             </li>
             {removeSignup()}
             <li className="nav-item">

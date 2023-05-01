@@ -78,9 +78,9 @@ const SearchExercises = () => {
         <>
             <div>
                 <section className="page-section">
-                    <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div className="row gx-4 gx-lg-5 justify-content-center mb-2">
                         <div className="col-lg-6">
-                            <form className="form-group" onSubmit={handleFormSubmit}>
+                            <form className="form-group d-flex justify-content-center pt-5" onSubmit={handleFormSubmit}>
                                 <select onChange={(e) => setSearchInput(e.target.value)} className="btn dropdown-toggle" aria-label="Default select example">
                                     <option value>Select a muscle to workout</option>
                                     <option value="abductors">Abductors</option>
