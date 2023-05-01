@@ -11,9 +11,20 @@ const Exercises = () => {
 
     const userData = data?.me || [];
 
-    const handleDeleteExercise = () => {
+    const handleDeleteExercise = async (exerciseId) => {
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+        if (!token) {
+            return false;
+        }
+        try {
+            await deleteExercise({ variables: { exerciseId } });
+            removeExerciseId(exerciseId);
+        }
+        catch (err) {
+            console.error(err);
+        }
+    };
 
-    }
     if (loading) {
         return <h2>LOADING....</h2>
     }
@@ -43,13 +54,13 @@ const Exercises = () => {
                                     <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                         <div className="text-center">
                                             <button
-                                                className="button btn-outline-dark mt-auto">
-                                                    'Delete'
+                                                className="button btn-outline-dark mt-auto" onClick={()=> handleDeleteExercise(exercise.exerciseId)}>
+                                                Delete 
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                                
+
 
                             </section>
                         </div>
