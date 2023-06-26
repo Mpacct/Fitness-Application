@@ -85,7 +85,7 @@ const SearchExercises = () => {
                                     <option value>Select a muscle to workout</option>
                                     <option value="abductors">Abductors</option>
                                     <option value="abs">Abs</option>
-                                    <option value="abbuctors">Abbuctors</option>
+                                    <option value="adductors">Adductors</option>
                                     <option value="biceps">Biceps</option>
                                     <option value="calves">Calves</option>
                                     <option value="cardiovascular-system">Cardiovascular-System</option>
