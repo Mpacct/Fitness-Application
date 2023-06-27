@@ -35,12 +35,12 @@ const SearchExercises = () => {
                 exerciseId: exercise.id,
                 name: exercise.name || ['No exercise to display'],
                 bodyPart: exercise.bodyPart,
-                muscleTarget: exercise.muscleTarget,
-                equipmentUsed: exercise.equipmentUsed,
-                image: exercise?.image || '',
+                muscleTarget: exercise.target,
+                equipmentUsed: exercise.equipment,
+                image: exercise?.gifUrl || '',
             }));
-
-            setSearchedExercises(exerciseData);
+            
+            setSearchedExercises(exerciseData.slice(0, 15));
             setSearchInput('');
 
         } catch (err) {
@@ -88,20 +88,20 @@ const SearchExercises = () => {
                                     <option value="adductors">Adductors</option>
                                     <option value="biceps">Biceps</option>
                                     <option value="calves">Calves</option>
-                                    <option value="cardiovascular-system">Cardiovascular-System</option>
+                                    <option value="cardiovascular%20system">Cardiovascular-System</option>
                                     <option value="delts">Delts</option>
                                     <option value="forearms">Forearms</option>
                                     <option value="glutes">Glutes</option>
                                     <option value="hamstrings">Hamstrings</option>
                                     <option value="lats">Lats</option>
-                                    <option value="levator-scapulae">Levator-Scapulae</option>
+                                    <option value="levator%20scapulae">Levator-Scapulae</option>
                                     <option value="pectorals">Pectorals</option>
                                     <option value="quads">Quads</option>
-                                    <option value="serratus-anterior">Serratus-Anterior</option>
+                                    <option value="serratus%20anterior">Serratus-Anterior</option>
                                     <option value="spine">Spine</option>
                                     <option value="traps">Traps</option>
                                     <option value="triceps">Triceps</option>
-                                    <option value="upper-back">Upper-Back</option>
+                                    <option value="upper%20back">Upper-Back</option>
                                 </select>
                                 <div className="d-grid">
                                     <button className="button btn-secondary" type='submit' variant='success'>Search Workouts</button>
